@@ -75,5 +75,38 @@ public class ConsoleOutput {
         logger.severe(ANSI.string("@|bold,red " + message + "|@"));
     }
 
-
+    public static void printLogo() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(
+                "                -=++++++=.                                                      \n")
+            .append(
+                "             -++-.     .:=*=.           -=-    :====-:  :=-                     \n")
+            .append(
+                "           :++.            -*=         :***-   :*=::-*+.:*=                     \n")
+            .append(
+                "          :*:                ++.       ++.++.  :*-   =*-:*=                     \n")
+            .append(
+                "         :*-   .++.    -*=   .*=      -*- :*=  :*+==+*= :*=                     \n")
+            .append(
+                "         =+.   =**+   :***.   -*.    :*******: :*=..    :*=                     \n")
+            .append(
+                "         =+.   -**-   .+*+.   -*.    =*.   .++.:*-      :*=                     \n")
+            .append(
+                "         =+.                  -*.   .:.     .:..:.      .:.                     \n")
+            .append(
+                "         =+.     ++.  :*-     :*.       ..                                      \n")
+            .append(
+                "         ++       .-==:       :*.   .+*+=+**:.++                      -*:       \n")
+            .append(
+                "        .*-                   :*.  .+*.    ...++=+++:  -++++:  =++++.=+*++.     \n")
+            .append(
+                "        ++                    :*:  .*=  .=++=.+*. .++ ++.  -*-:*=  .  -*:       \n")
+            .append(
+                "       =+.                    :*:  .++   ::*+.++   ++.++   .*+ :=+**- -*:       \n")
+            .append(
+                "      -*.   .:-=:.     :-:.   =*.   .+*=:-+*=.++   ++ =*=::+*::+-.:*+ -*=:.     \n")
+            .append(
+                "       +*++*+-::-+*++*+=:-=***+.      .---:.  --   --  .:--:   .---:   :-:.     \n");
+        logger.severe(stringBuilder.toString());
+    }
 }
