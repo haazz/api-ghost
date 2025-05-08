@@ -56,8 +56,8 @@ public class ExecuteScenairoCommand implements Callable<Integer> {
     /**
      * Executes the scenario test.
      * <p>
-     * This method validates the file name, loads the scenario,
-     * prints a logo, executes the scenario, and saves the result.
+     * This method validates the file name, loads the scenario, prints a logo, executes the
+     * scenario, and saves the result.
      * </p>
      *
      * @return exit code {@code 0} if the execution was successful, or {@code 1} on error
@@ -86,11 +86,13 @@ public class ExecuteScenairoCommand implements Callable<Integer> {
 
         ConsoleOutput.printLogo();
         ScenarioTestExecutor scenarioTestExecutor = new ScenarioTestExecutor();
-        ScenarioResult scenarioResult = scenarioTestExecutor.execute(scenario, new CliScenarioResultCallback());
+        ScenarioResult scenarioResult = scenarioTestExecutor.execute(scenario,
+            new CliScenarioResultCallback());
 
         ScenarioResultWriter scenarioResultWriter = new JsonScenarioResultWriter();
         File scenarioResultDir = FileUtil.findDirectory(FileType.RESULT);
-        File scenarioResultFile = new File(scenarioResultDir, FileUtil.replaceIllegalFileName(scenario.getName() + LocalDateTime.now() + ".json"));
+        File scenarioResultFile = new File(scenarioResultDir,
+            FileUtil.replaceIllegalFileName(scenario.getName() + LocalDateTime.now() + ".json"));
         scenarioResultWriter.writeScenarioResult(scenarioResult, scenarioResultFile.getPath());
         return 0;
     }

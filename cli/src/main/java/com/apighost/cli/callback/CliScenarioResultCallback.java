@@ -25,7 +25,7 @@ public class CliScenarioResultCallback implements ScenarioResultCallback {
      * Prints the result of a single step to the console.
      *
      * @param stepId the identifier of the completed step
-     * @param step the step definition
+     * @param step   the step definition
      * @param result the execution result of the step
      */
     @Override
@@ -38,7 +38,8 @@ public class CliScenarioResultCallback implements ScenarioResultCallback {
             .append((result.getType() == ProtocolType.HTTP) ? result.getMethod() : "").append(" ")
             .append(result.getUrl()).append("\n");
 
-        stringBuilder.append("-> ").append(result.getIsRequestSuccess() ? "Success" : "Failure").append(" ")
+        stringBuilder.append("-> ").append(result.getIsRequestSuccess() ? "Success" : "Failure")
+            .append(" ")
             .append(result.getStatus()).append(" ")
             .append(result.getDurationMs()).append(" ms\n");
         stringBuilder.append("\n");
@@ -49,7 +50,7 @@ public class CliScenarioResultCallback implements ScenarioResultCallback {
      * Prints the result of scenario to the console.
      *
      * @param scenario the identifier of the completed step
-     * @param result the execution result of the scenario
+     * @param result   the execution result of the scenario
      */
     @Override
     public void onScenarioCompleted(Scenario scenario, ScenarioResult result) {
